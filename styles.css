@@ -55,6 +55,40 @@ body {
   padding: 5rem 0 2rem;
 }
 
+.home-hero {
+  display: grid;
+  grid-template-columns: 1fr 180px;
+  grid-template-areas: "copy photo";
+  gap: 1.35rem;
+  align-items: center;
+}
+
+.profile-circle {
+  grid-area: photo;
+  justify-self: end;
+  width: 180px;
+  height: 180px;
+  margin: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 14px 30px rgba(27, 40, 48, 0.2);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.profile-circle img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+.hero-copy {
+  grid-area: copy;
+  min-width: 0;
+}
+
 .eyebrow {
   margin: 0;
   text-transform: uppercase;
@@ -183,6 +217,21 @@ h2 {
 }
 
 @media (max-width: 640px) {
+  .home-hero {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "photo"
+      "copy";
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .profile-circle {
+    width: 146px;
+    height: 146px;
+    margin: 0 auto;
+  }
+
   .hero {
     padding-top: 3.5rem;
   }
